@@ -47,8 +47,7 @@
                   <td>  
                     <ul tal:define="rolemap    row/rolemap;
                                     test       nocall: context/@@test;
-                                    rm python: test(filter_username, [item for item in rolemap if item['name'] == filter_username], rolemap)">
-
+                                    rm python: test(filter_username, [item for item in rolemap if item['id'] == filter_username], rolemap)">
                         <li tal:repeat="item rm">
                           <span tal:content="item/name"/>:
                           <tal:if condition="show_local">

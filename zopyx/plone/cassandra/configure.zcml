@@ -5,6 +5,7 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     >
 
+  <include package="Products.CMFCore" file="permissions.zcml" />
   <five:registerPackage package="." initialize=".initialize" />
 
   <browser:pages
