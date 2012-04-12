@@ -1,0 +1,120 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      i18n:domain="plone"
+      metal:use-macro="here/main_template/macros/master">
+
+  <body>
+
+    <div metal:fill-slot="main"
+         tal:define="rows            context/@@reportPermissions;
+                     show_roles      request/show_roles | python: ('local',);
+                     show_global     python: 'global' in show_roles;
+                     show_local      python: 'local' in show_roles;
+                     show_acquired   python: 'acquired' in show_roles;
+                     usernames       context/acl_users/getUserIds;
+                     filter_username request/username | nothing;
+                     dummy           usernames/sort;">
+
+      <h1 i18n:translate="Permission report">Permission report</h1>
+
+        <table class="listing" tal:condition="rows">
+          <thead>
+            <tr>
+              <th class="nosort">
+                <span i18n:translate="path">Path</span>/
+                <span i18n:translate="title">Title</span>
+              </th>
+              <th class="nosort" i18n:translate="roles">Roles</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tal:loop tal:repeat="row rows">
+              <tr tal:define="oddrow repeat/row/odd"
+                  tal:attributes="class python: oddrow and 'even' or 'odd'" >
+                  <td>
+                    <a tal:attributes="href string:${row/path}">
+                      <span tal:condition="row/relative_path"
+                            tal:content="row/relative_path" />
+                      <span tal:condition="not:row/relative_path"
+                            class="italic"
+                            i18n:translate="current folder">
+                            Current folder
+                      </span>
+                    </a>
+                    <br/>
+                    <span tal:content="string:(${row/title})" />
+                  </td>
+                  <td>  
+                    <ul tal:define="rolemap    row/rolemap;
+                                    test       nocall: context/@@test;
+                                    rm python: test(filter_username, [item for item in rolemap if item['name'] == filter_username], rolemap)">
+
+                        <li tal:repeat="item rm">
+                          <span tal:content="item/name"/>:
+                          <tal:if condition="show_local">
+                            <tal:if condition="item/local|nothing">
+                              <tal:def define="roles python: ', '.join(item['local'])">
+                                <span class="local-roles" tal:content="roles" /> 
+                              </tal:def>
+                            </tal:if>
+                          </tal:if>
+
+                          <tal:if tal:condition="exists: item/global">
+                            <tal:if condition="show_global">
+                                <tal:def define="roles python: ', '.join(item['global'])">
+                                  <span class="global-roles" tal:content="roles" /> 
+                              </tal:def>
+                            </tal:if>
+                          </tal:if>
+
+                          <tal:if tal:condition="item/acquired|nothing">
+                            <tal:if condition="show_acquired">
+                                <tal:def define="roles python: ', '.join(item['acquired'])">
+                                  <span class="acquired-roles" tal:content="roles" /> 
+                              </tal:def>
+                            </tal:if>
+                          </tal:if>
+                        </li>
+                    </ul>
+                  </td>
+              </tr>
+            </tal:loop>
+          </tbody>
+        </table>
+
+        <div tal:condition="not: rows" 
+             class="no-results" 
+             i18n:translate="no permission settings found">
+             No permission settings found
+        </div>
+    
+        <form tal:condition="rows"
+              tal:attributes="href string:${context/absolute_url}/report_permissions" method="post">
+          <div>
+              <label class="local-roles" for="show_local" i18n:translate="local roles">Local</label>
+              <input type="checkbox" name="show_roles:list" value="local" id="show_local" tal:attributes="CHECKED show_local"/>
+              <label class="acquired-roles" for="show_acquired" i18n:translate="acquired roles">Acquired</label>
+              <input type="checkbox" name="show_roles:list" value="acquired" id="show_acquired" tal:attributes="CHECKED show_acquired"/>
+              <label class="global-roles" for="show_global" i18n:translate="global roles">Global</label>
+              <input type="checkbox" name="show_roles:list" value="global" id="show_global" tal:attributes="CHECKED show_global"/>
+          </div>
+          <div>
+              <label for="username" i18n:translate="username">Username</label>
+              <select name="username" size="1">
+                <option/>
+                <option tal:repeat="name usernames"
+                        tal:content="name"
+                        tal:attributes="value       python: name.replace('group_', '');
+                                        selected    python: name.replace('group_', '') == request.get('username')"
+                />
+              </select>
+          </div>
+          <div>
+              <input class="context" type="submit" i18n:attributes="value" value="Filter" />
+          </div>
+        </form>
+
+    </div>
+
+  </body>
+</html>

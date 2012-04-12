@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="zopyx.plone">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="zopyx.plone.cassandra"
+      directory="profiles/default"
+      description='zopyx.plone.cassandra.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+</configure>

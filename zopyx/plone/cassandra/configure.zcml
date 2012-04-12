@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    >
+
+  <five:registerPackage package="." initialize=".initialize" />
+
+  <browser:pages
+      for="*"
+      permission="cmf.ManagePortal"
+      class=".cassandra.CassandraView">
+     <browser:page attribute="reportPermissions" name="reportPermissions" />
+     <browser:page attribute="test" name="test" />
+   </browser:pages>
+
+  <browser:page
+      for="*"
+      permission="cmf.ManagePortal"
+      name="cassandra"
+      template="cassandra.pt">
+   </browser:page>
+
+
+    <include file="skins.zcml" />
+    <include file="profiles.zcml" />
+</configure>

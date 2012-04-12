@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/collective/!svn/ver/248378/zopyx.plone.cassandra/trunk/zopyx/plone/cassandra
+END
+cassandra.pt
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/collective/!svn/ver/248378/zopyx.plone.cassandra/trunk/zopyx/plone/cassandra/cassandra.pt
+END
+version.txt
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/collective/!svn/ver/76607/zopyx.plone.cassandra/trunk/zopyx/plone/cassandra/version.txt
+END
+configure.zcml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/collective/!svn/ver/76588/zopyx.plone.cassandra/trunk/zopyx/plone/cassandra/configure.zcml
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/collective/!svn/ver/76569/zopyx.plone.cassandra/trunk/zopyx/plone/cassandra/__init__.py
+END
+cassandra.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/collective/!svn/ver/248372/zopyx.plone.cassandra/trunk/zopyx/plone/cassandra/cassandra.py
+END
+profiles.zcml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/collective/!svn/ver/76578/zopyx.plone.cassandra/trunk/zopyx/plone/cassandra/profiles.zcml
+END
+setuphandlers.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/collective/!svn/ver/76602/zopyx.plone.cassandra/trunk/zopyx/plone/cassandra/setuphandlers.py
+END
+tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/collective/!svn/ver/76570/zopyx.plone.cassandra/trunk/zopyx/plone/cassandra/tests.py
+END
+skins.zcml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/collective/!svn/ver/76577/zopyx.plone.cassandra/trunk/zopyx/plone/cassandra/skins.zcml
+END

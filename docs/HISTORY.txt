@@ -1,0 +1,15 @@
+Changelog
+=========
+
+0.2.0 - 30.11.2008
+------------------
+
+* using @@cassandra now requires manager privileges
+* fixed issues with the extension profile 
+
+
+0.1.0 - 29.11.2008
+------------------
+
+* Initial release
+

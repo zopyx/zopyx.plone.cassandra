@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/collective/!svn/ver/248377/zopyx.plone.cassandra/trunk/zopyx/plone/cassandra/profiles/default
+END
+skins.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/collective/!svn/ver/248377/zopyx.plone.cassandra/trunk/zopyx/plone/cassandra/profiles/default/skins.xml
+END
+import_steps.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/collective/!svn/ver/76602/zopyx.plone.cassandra/trunk/zopyx/plone/cassandra/profiles/default/import_steps.xml
+END
+zopyx.plone.cassandra_various.txt
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/collective/!svn/ver/76602/zopyx.plone.cassandra/trunk/zopyx/plone/cassandra/profiles/default/zopyx.plone.cassandra_various.txt
+END
