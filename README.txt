@@ -14,7 +14,7 @@ Installation
 - for existing Plone sites: add zopyx.plone.cassandra from
   Add/remove modules within the Plone site setup
 
-
+Usage
 -----
 
 Add ``/@@cassandra`` to the url of any object with your Plone site and
