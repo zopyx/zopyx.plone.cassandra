@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.3.5'
+version = '0.3.6-dev'
 
 setup(name='zopyx.plone.cassandra',
       version=version,
@@ -14,6 +14,7 @@ setup(name='zopyx.plone.cassandra',
         "Framework :: Plone :: 4.0",
         "Framework :: Plone :: 4.1",
         "Framework :: Plone :: 4.2",
+        "Framework :: Plone :: 4.3",
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
@@ -23,7 +24,7 @@ setup(name='zopyx.plone.cassandra',
       url='http://pypi.python.org/pypi/zopyx.plone.cassandra',
       license='ZPL',
       packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['zopyx'],
+      namespace_packages=['zopyx', 'zopyx.plone'],
       include_package_data=True,
       zip_safe=False,
       install_requires=[
