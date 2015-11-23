@@ -4,6 +4,11 @@ zopyx.plone.cassandra
 This module helps you to analyze your current security settings - especially
 local roles granted on some subfolder
 
+Requirements
+------------
+
+* Plone 4.3, Plone 5 or higher
+
 Installation
 ------------
 

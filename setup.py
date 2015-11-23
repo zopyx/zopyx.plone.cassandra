@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.3.6-dev'
+version = '0.3.6'
 
 setup(name='zopyx.plone.cassandra',
       version=version,
@@ -15,6 +15,7 @@ setup(name='zopyx.plone.cassandra',
         "Framework :: Plone :: 4.1",
         "Framework :: Plone :: 4.2",
         "Framework :: Plone :: 4.3",
+        "Framework :: Plone :: 5.0",
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
