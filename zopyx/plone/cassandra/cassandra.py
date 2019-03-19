@@ -4,14 +4,14 @@
 #
 # ZOPYX Limited & Co. KG
 # Charlottenstr. 37/1, D-72070 Tübingen, Germany
-# info@zopyx.com, www.zopyx.com 
+# info@zopyx.com, www.zopyx.com
 ################################################################
 
 """
 zopyx.plone.cassandra
 """
 
-from Globals import InitializeClass
+from App.class_init import InitializeClass
 from AccessControl import getSecurityManager
 from Products.Five import BrowserView
 
@@ -24,7 +24,7 @@ class CassandraView(BrowserView):
         return expr2
 
     def reportPermissions(self, filter=('local',)):
-        """ Walk over all subfolders of the current folder and 
+        """ Walk over all subfolders of the current folder and
             get hold of local roles etc.
         """
 

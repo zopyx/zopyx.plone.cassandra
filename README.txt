@@ -7,13 +7,12 @@ local roles granted on some subfolder
 Requirements
 ------------
 
-* Plone 4.3, Plone 5 or higher
+* Plone 5 or higher
 
 Installation
 ------------
 
-- add ``zopyx.plone.cassandra`` to the ``eggs`` and ``zcml``
-  options of your buildout.cfg. 
+- add ``zopyx.plone.cassandra`` to the ``eggs`` option of your buildout.cfg. 
 - re-run buildout
 - for new Plone sites: choose the zopyx.plone.cassandra extension profile
 - for existing Plone sites: add zopyx.plone.cassandra from
@@ -45,10 +44,9 @@ This module is licensed under the Zope Public License (ZPL 2.1).
 Contact
 -------
 
-| ZOPYX Ltd. 
-| c/o Andreas Jung, 
-| Charlottenstr. 37/1
-| D-72070 Tuebingen, Germany
+| ZOPYX . 
+| Hundskapfklinge 33
+| D-72074 Tuebingen, Germany
 | E-mail: info at zopyx dot com
 | Web: http://www.zopyx.com
 
