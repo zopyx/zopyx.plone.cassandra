@@ -28,7 +28,7 @@ for name, roles, type, id in acquired_roles:
 
 # second process local roles
 for name, roles, type, id in local_roles:
-    if result1.has_key(id):
+    if result1.get(id):
         result1[id]['local']=roles
     else:
         #We prefer the fullname

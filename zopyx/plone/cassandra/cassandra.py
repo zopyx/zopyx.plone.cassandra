@@ -2,8 +2,8 @@
 ################################################################
 # zopyx.plone.cassandra
 #
-# ZOPYX Limited & Co. KG
-# Charlottenstr. 37/1, D-72070 Tübingen, Germany
+# Andreas Jung/ZOPYX
+# Hundskapfklinge 33, D-72074 Tuebingen, Germany
 # info@zopyx.com, www.zopyx.com
 ################################################################
 
@@ -32,7 +32,6 @@ class CassandraView(BrowserView):
         brains = self.context.portal_catalog(path=context_path,
                                              is_folderish=True,
                                              )
-
         lst = []
         for brain in brains:
             folder = brain.getObject()
@@ -49,7 +48,7 @@ class CassandraView(BrowserView):
                 if d['acquired'] == ('Owner',) or len(d['acquired']) == 0:
                     del d['acquired']
 
-                if d.has_key('global') or d.has_key('local') or d.has_key('acquired'):
+                if d.get('global') or d.get('local') or d.get('acquired'):
                     _rolemap.append(d)
 
             rel_path = '/'.join(folder.getPhysicalPath()).replace(context_path, '')
@@ -66,7 +65,6 @@ class CassandraView(BrowserView):
                              'rolemap' : _rolemap,
                           })
 
-        lst.sort(lambda x,y: cmp(x['relative_path'], y['relative_path']))
-        return lst
+        return sorted(lst, key=lambda x: x['relative_path'])
 
 InitializeClass(CassandraView)
