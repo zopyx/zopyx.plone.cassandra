@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.5.0 - (2019-03-20)
+--------------------
+* Plone 5.2 compatibility, Python 3 compatibility
+
 0.4.0 - (2015-11-23)
 --------------------
 * Plone 5 compatibility added
