@@ -16,8 +16,8 @@ for name, roles, type, id in acquired_roles:
     #We prefer the fullname
     if not id.startswith('group_'):
         member = mtool.getMemberInfo(name)
-        if member is not None and not member['fullname'] == '':
-            name = name + ' (' + member['fullname'] + ')'
+        if member is not None and not safe_unicode(member['fullname']) == u'':
+            name = name + ' (' + safe_unicode(member['fullname']) + ')'
 
     result1[id]={
        'id'            : id,
@@ -37,8 +37,8 @@ for name, roles, type, id in local_roles:
         if not id.startswith('group_'):
             member = mtool.getMemberInfo(name)
 
-            if member is not None and not member['fullname'] == '':
-                name = name + ' (' + member['fullname'] + ')'
+            if member is not None and not safe_unicode(member['fullname']) == u'':
+                name = name + ' (' + safe_unicode(member['fullname']) + ')'
         result1[id]={
             'id'                : id,
             'name'              : name,
