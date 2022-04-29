@@ -15,8 +15,8 @@ for name, roles, type, id in acquired_roles:
     #We prefer the fullname
     if not id.startswith('group_'):
         member = mtool.getMemberInfo(name)
-        if member is not None and not member['fullname'] == '':
-            name = name + ' (' + member['fullname'] + ')'
+        if member is not None and member['fullname'] != '':
+            name = f'{name} (' + member['fullname'] + ')'
     result1[id]={
        'id'            : id,
        'name'          : name,
@@ -34,8 +34,8 @@ for name, roles, type, id in local_roles:
         #We prefer the fullname
         if not id.startswith('group_'):
             member = mtool.getMemberInfo(name)
-            if member is not None and not member['fullname'] == '':
-                name = name + ' (' + member['fullname'] + ')'
+            if member is not None and member['fullname'] != '':
+                name = f'{name} (' + member['fullname'] + ')'
         result1[id]={
             'id'                : id,
             'name'              : name,
@@ -53,7 +53,6 @@ result=result1.values()
 dec_users = [('Owner' not in a['local'], a['type'], a['name'], a) for a in result]
 dec_users.sort()
 result = [a[-1] for a in dec_users]
-return result
 
 
 

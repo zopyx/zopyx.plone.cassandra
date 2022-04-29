@@ -19,9 +19,7 @@ from Products.Five import BrowserView
 class CassandraView(BrowserView):
 
     def test(self, cond, expr1,  expr2):
-        if cond:
-            return expr1
-        return expr2
+        return expr1 if cond else expr2
 
     def reportPermissions(self, filter=('local',)):
         """ Walk over all subfolders of the current folder and
@@ -52,8 +50,7 @@ class CassandraView(BrowserView):
                     _rolemap.append(d)
 
             rel_path = '/'.join(folder.getPhysicalPath()).replace(context_path, '')
-            if rel_path.startswith('/'):
-                rel_path = rel_path[1:]
+            rel_path = rel_path.removeprefix('/')
             if not rel_path:
                 rel_path = ''
 
